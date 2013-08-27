@@ -1,0 +1,32 @@
+// Largest prime factor
+def prime_n(n)
+    sum = 0
+    half = n/2
+    for i in 3..half
+        if(n % i ==0)
+            sum+=1
+        end
+    end
+    if(sum == 0)
+        return n
+        else
+        return 0
+    end
+end
+    
+def prime_factor(max)
+    arr = []
+    half = max/2
+    for j in 2..half
+        if(max % j ==0)
+            if (prime_n(j)>0)
+                arr << prime_n(j)
+                puts prime_n(j)
+            end
+        end
+    end
+    puts arr.inspect
+    puts "Biggest prime factor: #{arr[arr.length-1]}"
+end
+
+prime_factor(600851475143)
